@@ -4,12 +4,27 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I'm a programmer based in Brisbane. My undergrad was in Mathematics and IT at UQ, with a major in Operations Research and Data Analytics. I like solving hard problems and making fun programs.
 
-### More Information
+### Interests
 
-A place to include any other types of information that you'd like to include about yourself.
+* Game Engine Architecture
+* Graphics and OpenGL
+* Multithreading and High Performance Computing
+* Operations Research and Mathematical Optimisation
+* Bayesian Statistics
+* Neural Networks
+
+### Languages
+
+* c/c++
+* c#
+* lua
+* Java
+* Python
+* R
+* MATLAB
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[chalindarodrigo@gmail.com](mailto:chalindarodrigo@gmail.com)
