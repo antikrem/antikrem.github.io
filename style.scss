@@ -276,6 +276,9 @@ nav {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: $darkerGray;
+  
+  position: fixed;
+  bottom: 0;
 }
 
 footer {
