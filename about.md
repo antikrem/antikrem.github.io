@@ -28,3 +28,13 @@ I'm a programmer based in Brisbane. My undergrad was in Mathematics and IT at UQ
 ### Contact me
 
 [chalindarodrigo@gmail.com](mailto:chalindarodrigo@gmail.com)
+
+
+
+
+
+
+
+
+
+
