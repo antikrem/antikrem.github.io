@@ -124,6 +124,18 @@ img {
   color: $gray;
 }
 
+tbody {
+  border-top: 1px solid #ddd;	
+}
+
+table td + td { 
+  border-left: 1px solid #ddd; 
+}
+
+table th + th { 
+  border-left: 1px solid #ddd; 
+}
+
 // Specify the color of the selection
 ::-moz-selection {
   color: $black;
