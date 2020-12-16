@@ -124,16 +124,33 @@ img {
   color: $gray;
 }
 
+thead {
+  background-color: $darkGold;	
+}
+
 tbody {
   border-top: 1px solid #ddd;	
 }
 
+table {
+  margin: auto;	
+}
+
 table td + td { 
   border-left: 1px solid #ddd; 
+  
 }
 
 table th + th { 
   border-left: 1px solid #ddd; 
+}
+
+th {
+  margin: 2px;	
+}
+
+td {
+  margin: 2px;	
 }
 
 // Specify the color of the selection
