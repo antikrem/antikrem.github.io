@@ -6,7 +6,7 @@ title: Colourise Shader
 A common required task is to apply a colourisation in a fragment shader, but all the online implementations are just plain awful. The top results from a google search will get either a [multiplicative modulation](https://gamedev.stackexchange.com/questions/75923/colorize-with-a-given-color-a-texture) or some [arbitary linear combination](https://gist.github.com/baba-s/4a81861a8c963a68a862ada545b0100f). What I really want is that lovely GIMP colorise...
 ![_config.yml]({{ site.baseurl }}/images/2020-12-17-Colourise/1.png)
 
-Notice how the white middle stays white. Strongly bright objects apear white, even if the output isn't constant over the colour spectrum. A good example is the sun, which is white, despite having [non-uniform output at different frequencies](https://wtamu.edu/~cbaird/sq/2013/07/03/what-is-the-color-of-the-sun/). If I wanted to colourise a picture of the sun at midday, I would expect the brightest part to remain white. 
+Notice how the white middle stays white with GIMP's colourise. Strongly bright objects apear white, even if the output isn't constant over the colour spectrum. A good example is the sun, which is white, despite having [non-uniform output at different frequencies](https://wtamu.edu/~cbaird/sq/2013/07/03/what-is-the-color-of-the-sun/). If I wanted to colourise a picture of the sun at midday, I would expect the brightest part to remain white. 
 
 I would also expect the brightness to stay the same across the image. The above colourise shaders darken the image. GIMP's colourise preserves luminance, which is probably why it looks the best.
 
