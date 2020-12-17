@@ -55,7 +55,7 @@ vec3 colourise(vec3 hsl, vec3 texel) {
 ```
 
 # Application
-I also wrote an implementation in my engine. And using a bullet asset, its possible to see how closely it matches GIMP with a hsl of (0.0, 0.75, 0.55):
+And using a bullet asset, its possible to see how closely it matches GIMP with a hsl of (0.0, 0.75, 0.55):
 
 ![_config.yml]({{ site.baseurl }}/images/2020-12-17-Colourise/2.png)
 
