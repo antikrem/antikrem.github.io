@@ -29,7 +29,7 @@ if (colorize->lightness > 0)
   gimp_hsl_to_rgb (&hsl, &rgb);
 ```
 
-GIMP's colourise take HSL rather than RGB for incoming colour, which has the added benifit of being easier for artists. Also, the ranges for the input HSL is not `(0-1, 0-1, 0-1)` as I would like for to be standard for all color values in shader I make, but that can be modified pretty easily. 
+GIMP's colourise take HSL rather than RGB for incoming colour, which has the added benifit of being easier for artists. Also, the ranges for the input HSL is not `(0-1, 0-1, 0-1)`. I would like the standard for all color values in shaders I right to be between 0 and 1, so that had to be modified. 
 
 In all seriousness, while being inspired by an algorithm used in a GPL Program and writing an implementation in a different language is a grey area, the resulting shader function is technically derived work. Thus, it would fall under GPLv3 and related usage restrictions.
 
@@ -55,7 +55,7 @@ vec3 colourise(vec3 hsl, vec3 texel) {
 ```
 
 # Application
-I also wrote an implementation in my engine. And using a bullet asset, its possible to see how closely it matches GIMP (with a hsl of (0.0, 0.75, 0.55)):
+I also wrote an implementation in my engine. And using a bullet asset, its possible to see how closely it matches GIMP with a hsl of (0.0, 0.75, 0.55):
 
 ![_config.yml]({{ site.baseurl }}/images/2020-12-17-Colourise/2.png)
 
