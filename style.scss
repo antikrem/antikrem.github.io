@@ -114,12 +114,6 @@ img {
   max-width: 100%;
 }
 
-#main > img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 // Fixes images in popup boxes from Google Translate
 .gmnoprint img {
   max-width: none;
@@ -309,6 +303,13 @@ nav {
     text-transform: uppercase;
     font-size: 15px;
   }
+	
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 }
 
 .wrapper-footer {
