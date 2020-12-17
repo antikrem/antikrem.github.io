@@ -40,7 +40,7 @@ I wrote an [implementation in shader toy](https://www.shadertoy.com/view/wdKfDc)
 
 ```
 vec3 colourise(vec3 hsl, vec3 texel) {
-	float lum = dot(texel, vec3(0.2126, 0.7152, 0.0722));
+    float lum = dot(texel, vec3(0.2126, 0.7152, 0.0722));
     
     hsl.b = 2.0 * hsl.b - 1.0;
     
