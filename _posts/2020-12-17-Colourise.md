@@ -67,7 +67,7 @@ A better demonstration is in my engine. With a script to spawn some bullets with
 
 ![_config.yml]({{ site.baseurl }}/images/2020-12-17-Colourise/3.gif)
 
-Really nice. I can save dev time and texture atlas space by letting the shaders colourise in realtime. It also makes scripting easier, with colourisations being seperated from the assets.
+Really nice. I can save dev time and texture atlas space by letting the shaders colourise in realtime. It also makes scripting easier, with colourisation being seperated from the assets.
 
 # Conclusion
 Preserving luminance makes this look better than other colourise algorithms. I recommend using this type of colourise over the usual on stack overflow.
