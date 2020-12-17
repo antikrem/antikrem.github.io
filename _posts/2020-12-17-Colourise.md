@@ -8,7 +8,7 @@ A common required task is to apply a colourisation in a fragment shader, but all
 
 Notice how the white middle stays white. Strongly bright objects apear white, even if the output isn't constant over the colour spectrum. A good example is the sun, which is white, despite having [non-uniform output at different frequencies](https://wtamu.edu/~cbaird/sq/2013/07/03/what-is-the-color-of-the-sun/). If I wanted to colourise a picture of the sun at midday, I would expect the brightest part to remain white. 
 
-I would also expect the brightness to stay the same across the image, while the above colourise shaders will darken the image. GIMP's colourise preserves luminance, which is great.
+I would also expect the brightness to stay the same across the image. The above colourise shaders darken the image. GIMP's colourise preserves luminance, which is probably why it looks the best.
 
 # GIMP Tribute Act
 As GIMP is free and open-source software, instead of trying to back-engineer their colorise filter we can ~~steal~~ take inspiration from their algorithm. Specifically, 
