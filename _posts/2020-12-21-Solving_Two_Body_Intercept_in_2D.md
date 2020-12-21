@@ -32,9 +32,7 @@ With \\(a = p_x-q_x\\) and \\(b = p_y-q_y\\).
 
 The unknown \\(\theta\\) can be removed by equating these expressions without loss of generality:
 
-\\[\arccos{ \frac{a+t^{\*}\times v_x}{t^{\*}\times s} } = \arcsin{ \frac{b+t^{\*}\times v_y}{t^{\*}\times s} } \\]
-
-\\[\cos{\arccos{\frac{a+t^{\*}\times v_x}{t^{\*}\times s}}} = \frac{b+t^{\*}\times v_y}{t^{\*}\times s} \\]
+\\[\arccos{ \big{(} \frac{a+t^{\*}\times v_x}{t^{\*}\times s} } = \arcsin{ \frac{b+t^{\*}\times v_y}{t^{\*}\times s} \big{)} } \\]
 
 The trigonometric functions can be simplified out with the identity \\( \cos{\arccos{x}} = \sqrt{1-x^2} \\):
 
