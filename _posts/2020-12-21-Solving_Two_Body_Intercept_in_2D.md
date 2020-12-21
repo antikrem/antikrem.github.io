@@ -12,15 +12,15 @@ A nicer solution can be done by simply solving the linear system derived from th
 # Solution
 To begin with, consider an object with initial position \\( p_0=\{p_x, p_y\} \\) at constant speed \\(s\\) and unknown angle \\(\theta\\). The target begins at \\(q_0=\{q_x, q_y\}\\) with velocity \\(v=\{v_x, v_y\}\\). It follows each objects position at time \\(t\\) will be:
 
-\\[p_t = p_0+t\times v\\]
+\\[p_t = p_0+vt\\]
 
-\\[q_t = \{q_x + t\times s \times \cos{\theta}, q_y+t\times s\times \sin{\theta}\}\\]
+\\[q_t = \{q_x + s t \cos{\theta}, q_y+s t \sin{\theta}\}\\]
 
 As the goal is to solve for \\(p_t=q_t\\) for some \\(t=t^\*\\), the system of equations can be set up as follows:
 
-\\[q_x+t^{\*}\times s \times \cos{\theta} = p_x+t^{\*} \times v_x\\]
+\\[q_x+t^{\*} s \cos{\theta} = p_x+t^{\*} v_x\\]
 
-\\[q_y+t^{\*}\times s \times \sin{\theta} = p_y+t^{\*} \times v_y\\]
+\\[q_y+t^{\*} s \sin{\theta} = p_y+t^{\*} v_y\\]
 
 Which can be rearranged as so:
 
