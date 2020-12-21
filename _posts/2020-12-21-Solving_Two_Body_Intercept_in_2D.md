@@ -16,7 +16,9 @@ Consider an object with initial position \\( p_0=\{p_x, p_y\} \\) at constant sp
 
 With \\(j = p_x-q_x\\) and \\(j = p_y-q_y\\).
 
-And the 
+And the angle being:
+
+\\[\theta = \arctan{\frac{k+t^{\*} v_y}{j+t^{\*} v_x }}\\]
 
 # Derivation
 To begin with, each objects position at time \\(t\\) will be:
