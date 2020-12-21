@@ -47,3 +47,16 @@ Multiplying both sides by \\({t^{\*}}^2 s^2\\):
 \\[{t^{\*}}^2 s^2-a^2-2 a t^{\*} v_x - {t^{\*}}^2 {v_x}^2 = b^2 + 2 b t^{\*} v_y + {t^{\*}}^2{v_y}^2\\]
 
 \\[{t^{\*}}^2 (s^2 - {v_x}^2 - {v_y}^2) + t^{\*}(-2 a v_x - 2 b v_y) + (- a^2 - b^2) = 0 \\]
+
+This gives a quadratic on \\(t^{\*}\\), which can be solved with the quadratic formula:
+
+\\[a = s^2 - {v_x}^2 - {v_y}^2 \\]
+
+\\[b = -2 a v_x - 2 b v_y \\]
+
+\\[c = - a^2 - b^2 \\]
+
+\\[t^{\*} =\frac{-b\\pm \sqrt{b^2-4ac}}{2a} \\]
+
+# Interpreting \\(t^{\*}\\)
+
