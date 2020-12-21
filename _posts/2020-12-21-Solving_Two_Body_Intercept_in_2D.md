@@ -24,21 +24,21 @@ As the goal is to solve for \\(p_t=q_t\\) for some \\(t=t^\*\\), the system of e
 
 Which can be rearranged as so:
 
-\\[\cos{\theta} = \frac{a+t^{\*}\times v_x}{t^{\*}\times s}\\]
+\\[\cos{\theta} = \frac{a+t^{\*} v_x}{t^{\*} s}\\]
 
-\\[\sin{\theta} = \frac{b+t^{\*}\times v_y}{t^{\*}\times s}\\]
+\\[\sin{\theta} = \frac{b+t^{\*} v_y}{t^{\*} s}\\]
 
 With \\(a = p_x-q_x\\) and \\(b = p_y-q_y\\).
 
 The unknown \\(\theta\\) can be removed by equating these expressions without loss of generality:
 
-\\[\arccos{ \bigg{(} \frac{a+t^{\*}\times v_x}{t^{\*}\times s} \bigg{)}} = \arcsin{ \bigg{(} \frac{b+t^{\*}\times v_y}{t^{\*}\times s} \bigg{)} } \\]
+\\[\arccos{ \bigg{(} \frac{a+t^{\*} v_x}{t^{\*} s} \bigg{)}} = \arcsin{ \bigg{(} \frac{b+t^{\*} v_y}{t^{\*} s} \bigg{)} } \\]
 
 The trigonometric functions can be simplified out with the identity \\( \cos{(\arccos{x})} = \sqrt{1-x^2} \\):
 
-\\[\sqrt{ 1-\bigg{(}\frac{a+t^{\*}\times v_x}{t^{\*}\times s} \bigg{)}^2 } = \frac{b+t^{\*}\times v_y}{t^{\*}\times s} \\]
+\\[\sqrt{ 1-\bigg{(}\frac{a+t^{\*} v_x}{t^{\*} s} \bigg{)}^2 } = \frac{b+t^{\*} v_y}{t^{\*} s} \\]
 
-\\[ 1-\bigg{(}\frac{a+t^{\*}\times v_x}{t^{\*}\times s} \bigg{)}^2  = \bigg{(} \frac{b+t^{\*}\times v_y}{t^{\*}\times s} \bigg{)}^2 \\]
+\\[ 1-\bigg{(}\frac{a+t^{\*} v_x}{t^{\*} s} \bigg{)}^2  = \bigg{(} \frac{b+t^{\*} v_y}{t^{\*} s} \bigg{)}^2 \\]
 
 Multiplying both sides by \\({t^{\*}}^2 s^2\\)
 
