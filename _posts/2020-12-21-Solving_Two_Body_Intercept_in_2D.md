@@ -18,15 +18,15 @@ To begin with, consider an object with initial position \\( p_0=\{p_x, p_y\} \\)
 
 As the goal is to solve for \\(p_t=q_t\\) for some \\(t=t*\\), the system of equations can be set up as follows:
 
-\\[q_x+t*\times s \times \cos(\theta) = p_x+t* \times v_x\\]
+\\[q_x+t*\times s \times \cos{\theta} = p_x+t* \times v_x\\]
 
-\\[q_y+t*\times s \times \sin(\theta) = p_y+t* \times v_y\\]
+\\[q_y+t*\times s \times \sin{\theta} = p_y+t* \times v_y\\]
 
 Which can be rearranged as so:
 
-\\[\cos\theta = \frac{a+t*\times v_x}{t*\times s}\\]
+\\[\cos{\theta} = \frac{a+t*\times v_x}{t*\times s}\\]
 
-\\[\sin\theta = \frac{b+t*\times v_y}{t*\times s}\\]
+\\[\sin{\theta} = \frac{b+t*\times v_y}{t*\times s}\\]
 
 The unknown \\(\theta\\) can be removed by equating these expressions without loss of generality:
 
