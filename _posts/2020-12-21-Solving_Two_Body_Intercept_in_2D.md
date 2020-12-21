@@ -18,14 +18,6 @@ To begin with, consider an object with initial position \\( p_0=\{p_x, p_y\} \\)
 
 As the goal is to solve for \\(p_t=q_t\\) for some \\(t=t*\\), the system of equations can be set up as follows:
 
-\\[q_x \\]
-
-\\[p_t = p_0+t\times v\\]
-
-\\[q_x + t* \times \\]
-
-\\[p_t = p_0+t\times v\\]
-
 \\[q_x+t*\times s \times \cos{\theta}\\]
 
 \\[q_x+t*\times s \times \cos{\theta} = p_x+t* \times v_x\\]
@@ -44,4 +36,4 @@ The unknown \\(\theta\\) can be removed by equating these expressions without lo
 
 \\[\cos{\arccos{\frac{a+t*\times v_x}{t*\times s}}} = \frac{b+t*\times v_y}{t*\times s} \\]
 
-Further 
+The trigonometric 
