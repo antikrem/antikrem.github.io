@@ -37,3 +37,9 @@ The unknown \\(\theta\\) can be removed by equating these expressions without lo
 The trigonometric functions can be simplified out with the identity \\( \cos{(\arccos{x})} = \sqrt{1-x^2} \\):
 
 \\[\sqrt{ 1-\bigg{(}\frac{a+t^{\*}\times v_x}{t^{\*}\times s} \bigg{)}^2 } = \frac{b+t^{\*}\times v_y}{t^{\*}\times s} \\]
+
+\\[ 1-\bigg{(}\frac{a+t^{\*}\times v_x}{t^{\*}\times s} \bigg{)}^2  = \bigg{(} \frac{b+t^{\*}\times v_y}{t^{\*}\times s} \bigg{)}^2 \\]
+
+Multiplying both sides by \\(t^{\*} s\\)
+
+\\[ 1-\bigg{(}\frac{a+t^{\*}\times v_x}{t^{\*}\times s} \bigg{)}^2  = \bigg{(} \frac{b+t^{\*}\times v_y}{t^{\*}\times s} \bigg{)}^2 \\]
