@@ -8,7 +8,12 @@ This is a common issue in a few places, and a casual google will find only [one 
 A nicer solution can be done by simply solving the linear system derived from the finite difference 
 
 # Solution
-To begin with, consider an object with initial position \\( p_0=\{p_x, p_y\} \\) at constant speed \\(s)\\ and unknown angle \\(\theta)\\. The target begins at \\(q=_0\{q_x, q_y\}\\) with velocity \\(v=\{v_x, v_y\}\\). It follows each objects position at time \\(t\\) will be:
+To begin with, consider an object with initial position \\( p_0=\{p_x, p_y\} \\) at constant speed \\(s\\) and unknown angle \\(\theta\\). The target begins at \\(q=_0\{q_x, q_y\}\\) with velocity \\(v=\{v_x, v_y\}\\). It follows each objects position at time \\(t\\) will be:
 
 \\[p_t = p_0+t\times v\\]
 \\[q_t =_\{q_x+t\times s\times \cos(\theta), q_y+t\times s\times \sin(\theta)\} \}\\]
+
+As the goal is to solve for \\(p_t=q_t)\\ for some \\(t=t*\\), the system of equations can be set up as follows:
+
+\\[q_x+t*\times s \times \cos(\theta) = p_x+t* \times v_x\\]
+\\[q_y+t*\times s \times \sin(\theta) = p_y+t* \times v_y\\]
