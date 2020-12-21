@@ -70,7 +70,7 @@ This gives a quadratic on \\(t^{\*}\\), which can be solved with the quadratic f
 \\[t^{\*} =\frac{-b\\pm \sqrt{b^2-4ac}}{2a} \\]
 
 ## Interpreting \\(t^{\*}\\)
-The quadratic formula has two solutions. Each solution has four possible states:
+The quadratic formula has two solutions. Each solution has four possible states (ignoring zero):
 
 #### Negative
 This indicates that a collision, i.e. \\(p_t=q_t\\) would have been possible at an earlier time. Generally, at most 1 solution will be negative, especially when the source's position lies almost perpendicular to the target's velocity.
@@ -92,7 +92,7 @@ In this case, generally just choose the smaller solution for consistency. For ap
 When no positive real solution is possible, the model is simply not solvable. No angle exists that can cause an intersection. In this case, using the direct angle to target is probably the most graceful backup, though exceptions and error codes might be more your style.
 
 ## Solving Angle
-Solving for \\(theta\\) also comes from the system of equations:
+Solving for \\(\theta\\) also comes from the system of equations:
 \\[t^{\*} s  = \frac{j+t^{\*} v_x}{\cos{\theta}}\\]
 
 \\[t^{\*} s = \frac{k+t^{\*} v_y}{\sin{\theta} }\\]
@@ -109,4 +109,41 @@ And recalling \\(\tan{\theta}=\sin{\theta}/\cos{\theta}\\):
 
 \\[\theta = \arctan{\frac{k+t^{\*} v_y}{j+t^{\*} v_x }}\\]
 
+In execution, `atan2` would need to be used over simple `arctan` to avoid incorrect solutions due to the periodic behaviour of tan.
+
 # Implementation
+An implementation was made in lua:
+```
+function solve_angle_to_moving_player(qx, qy, s, px, py, vx, vy)
+	local j = px - qx;
+	local k = py - qy;
+
+	-- Solution is in the form of a quadratic
+	local a = (vy^2 + vx^2 - s^2);
+	local b = (2*j*vx + 2*k*vy);
+	local c = (j^2 + k^2);
+
+	local t0, t1 = math.solve_quadratic(a, b, c)
+
+	-- Select smallest non negative solution
+	local solutions = {math.strip_negatives(t0, t1)}
+	local t_star = nil
+	if #solutions > 0 then
+		t_star = math.min(unpack(solutions))
+	end
+
+	local theta = 0
+
+	-- If no solution, then get simple angle, else solve for theta
+	if is_nil(t_star) then
+		theta = get_angle_to(px, py, qx, qy)
+	else
+		theta = math.to_degrees(math.atan2((k + t_star * vy), (j + t_star * vx)))
+	end
+
+	return theta
+end
+```
+
+# Application
+This was originally derived for a bullet pattern that predicts the player's movement. The idea being this encourages quick reaction time, control over movement and understanding of mechanics to quickly change direction. 
