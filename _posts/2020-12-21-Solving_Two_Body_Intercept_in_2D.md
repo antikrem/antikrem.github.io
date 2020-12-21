@@ -19,7 +19,7 @@ To begin with, consider an object with initial position \\( p_0=\{p_x, p_y\} \\)
 As the goal is to solve for \\(p_t=q_t\\) for some \\(t=t*\\), the system of equations can be set up as follows:
 
 \\[q_x\\]
-\\[q_x+t*\times s \times \\]
+\\[q_x+t*\times \\]
 \\[q_x+t*\times s \times \cos{\theta}\\]
 \\[q_x+t*\times s \times \cos{\theta} = p_x+t* \times v_x\\]
 
