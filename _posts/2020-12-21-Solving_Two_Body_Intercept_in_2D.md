@@ -12,7 +12,9 @@ A nicer solution can be done by simply solving the linear system derived from th
 # Solution
 Consider an object with initial position \\( p_0=\{p_x, p_y\} \\) at constant speed \\(s\\) and unknown angle \\(\theta\\). The target begins at \\(q_0=\{q_x, q_y\}\\) with velocity \\(v=\{v_x, v_y\}\\). The intersect time will be 
 
-\\[t^{\*} =\frac{(2 a v_x + 2 b v_y)\\pm \sqrt{(-2 a v_x - 2 b v_y)^2-4(s^2 - {v_x}^2 - {v_y}^2)(- a^2 - b^2)}}{2(s^2 - {v_x}^2 - {v_y}^2)} \\]
+\\[t^{\*} =\frac{(2 j v_x + 2 k v_y)\\pm \sqrt{(-2 j v_x - 2 k v_y)^2-4(s^2 - {v_x}^2 - {v_y}^2)(- j^2 - k^2)}}{2(s^2 - {v_x}^2 - {v_y}^2)} \\]
+
+With \\(j = p_x-q_x\\) and \\(j = p_y-q_y\\).
 
 And the 
 
