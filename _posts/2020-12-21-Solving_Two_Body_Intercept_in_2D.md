@@ -105,6 +105,6 @@ And recalling \\(\tan{\theta}=\sin{\theta}/\cos{\theta}\\):
 
 \\[\tan{\theta} = \frac{k+t^{\*} v_y}{\frac{j+t^{\*} v_x }\\]
 
-\\[\theta = \arctan{\frac{k+t^{\*} v_y}{\frac{j+t^{\*} v_x }}\\]
+\\[\theta = \arctan{\frac{k+t^{\*} v_y}{j+t^{\*} v_x }}\\]
 
 # Implementation
