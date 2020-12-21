@@ -40,8 +40,10 @@ The trigonometric functions can be simplified out with the identity \\( \cos{(\a
 
 \\[ 1-\bigg{(}\frac{a+t^{\*} v_x}{t^{\*} s} \bigg{)}^2  = \bigg{(} \frac{b+t^{\*} v_y}{t^{\*} s} \bigg{)}^2 \\]
 
-Multiplying both sides by \\({t^{\*}}^2 s^2\\)
+Multiplying both sides by \\({t^{\*}}^2 s^2\\):
 
-\\[ {t^{\*}}^2 s^2-(a+t^{\*} v_x)^2  = (b+t^{\*} v_y)^2 \\]
+\\[{t^{\*}}^2 s^2-(a+t^{\*} v_x)^2  = (b+t^{\*} v_y)^2 \\]
 
-\\[ {t^{\*}}^2 s^2-a^2-2 a t^{\*} v_x - {t^{\*}}^2 {v_x}^2 = b^2 + 2 b t^{\*} v_y + {t^{\*}}^2{v_y}^2\\]
+\\[{t^{\*}}^2 s^2-a^2-2 a t^{\*} v_x - {t^{\*}}^2 {v_x}^2 = b^2 + 2 b t^{\*} v_y + {t^{\*}}^2{v_y}^2\\]
+
+\\[{t^{\*}}^2 (s^2 - {v_x}^2 - {v_y}^2) + t^{\*}(-2 a v_x - 2 b v_y) + (- a^2 - b^2) = 0 \\]
