@@ -10,7 +10,7 @@ A casual google will find only [one acceptable solution](https://www.codeproject
 A nicer solution can be done by simply solving the linear system derived from the finite difference model of the objects position.
 
 # Solution
-Consider an object with initial position \\( p_0=\{p_x, p_y\} \\) at constant speed \\(s\\) and unknown angle \\(\theta\\). The target begins at \\(q_0=\{q_x, q_y\}\\) with velocity \\(v=\{v_x, v_y\}\\). The intersect time will be 
+Consider an object with initial position \\( \vec{p_0}=\{p_x, p_y\} \\) at constant speed \\(s\\) and unknown angle \\(\theta\\). The target begins at \\(\vec{q_0}=\{q_x, q_y\}\\) with velocity \\(\vec{v}=\{v_x, v_y\}\\). The intersect time will be 
 
 \\[t^{\*} =\frac{(2 j v_x + 2 k v_y)\\pm \sqrt{(-2 j v_x - 2 k v_y)^2-4(s^2 - {v_x}^2 - {v_y}^2)(- j^2 - k^2)}}{2(s^2 - {v_x}^2 - {v_y}^2)} \\]
 
@@ -23,9 +23,9 @@ And the angle being:
 # Derivation
 To begin with, each objects position at time \\(t\\) will be:
 
-\\[p_t = p_0+vt\\]
+\\[\vec{p_t} = \vec{p_0}+\vec{v}t\\]
 
-\\[q_t = \{q_x + s t \cos{\theta}, q_y+s t \sin{\theta}\}\\]
+\\[\vec{q_t} = \{q_x + s t \cos{\theta}, q_y+s t \sin{\theta}\}\\]
 
 As the goal is to solve for \\(p_t=q_t\\) for some \\(t=t^\*\\), the system of equations can be set up as follows:
 
@@ -115,33 +115,33 @@ In execution, `atan2` would need to be used over simple `arctan` to avoid incorr
 An implementation was made in lua:
 ```
 function solve_angle_to_moving_player(qx, qy, s, px, py, vx, vy)
-	local j = px - qx;
-	local k = py - qy;
+    local j = px - qx;
+    local k = py - qy;
 
-	-- Solution is in the form of a quadratic
-	local a = (vy^2 + vx^2 - s^2);
-	local b = (2*j*vx + 2*k*vy);
-	local c = (j^2 + k^2);
+    -- Solution is in the form of a quadratic
+    local a = (vy^2 + vx^2 - s^2);
+    local b = (2*j*vx + 2*k*vy);
+    local c = (j^2 + k^2);
 
-	local t0, t1 = math.solve_quadratic(a, b, c)
+    local t0, t1 = math.solve_quadratic(a, b, c)
 
-	-- Select smallest non negative solution
-	local solutions = {math.strip_negatives(t0, t1)}
-	local t_star = nil
-	if #solutions > 0 then
-		t_star = math.min(unpack(solutions))
-	end
+    -- Select smallest non negative solution
+    local solutions = {math.strip_negatives(t0, t1)}
+    local t_star = nil
+    if #solutions > 0 then
+        t_star = math.min(unpack(solutions))
+    end
 
-	local theta = 0
+    local theta = 0
 
-	-- If no solution, then get simple angle, else solve for theta
-	if is_nil(t_star) then
-		theta = get_angle_to(px, py, qx, qy)
-	else
-		theta = math.to_degrees(math.atan2((k + t_star * vy), (j + t_star * vx)))
-	end
+    -- If no solution, then get simple angle, else solve for theta
+    if is_nil(t_star) then
+        theta = get_angle_to(px, py, qx, qy)
+    else
+        theta = math.to_degrees(math.atan2((k + t_star * vy), (j + t_star * vx)))
+    end
 
-	return theta
+    return theta
 end
 ```
 
