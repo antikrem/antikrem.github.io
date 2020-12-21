@@ -14,7 +14,7 @@ To begin with, consider an object with initial position \\( p_0=\{p_x, p_y\} \\)
 
 \\[p_t = p_0+t\times v\\]
 
-\\[q_t =_\{q_x+t\times s\times \cos(\theta), q_y+t\times s\times \sin(\theta)\} \\]
+\\[q_t =_q_x + t\times s \times \cos{\theta}, q_y+t\times s\times \sin{\theta}\\]
 
 As the goal is to solve for \\(p_t=q_t\\) for some \\(t=t*\\), the system of equations can be set up as follows:
 \\[p_t = p_0+t\times v\\]
