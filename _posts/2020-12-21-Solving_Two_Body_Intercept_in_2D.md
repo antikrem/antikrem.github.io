@@ -36,4 +36,4 @@ The unknown \\(\theta\\) can be removed by equating these expressions without lo
 
 \\[\cos{\arccos{\frac{a+t*\times v_x}{t*\times s}}} = \frac{b+t*\times v_y}{t*\times s} \\]
 
-The trigonometric 
+The trigonometric functions can be simplified out with the identity \\( \cos{\arccos{x}} = \sqrt{1-x^2} \\)
