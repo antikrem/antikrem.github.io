@@ -40,6 +40,6 @@ The trigonometric functions can be simplified out with the identity \\( \cos{(\a
 
 \\[ 1-\bigg{(}\frac{a+t^{\*}\times v_x}{t^{\*}\times s} \bigg{)}^2  = \bigg{(} \frac{b+t^{\*}\times v_y}{t^{\*}\times s} \bigg{)}^2 \\]
 
-Multiplying both sides by \\(t^{\*} s\\)
+Multiplying both sides by \\({t^{\*}}^2 s^2\\)
 
-\\[ 1-\bigg{(}\frac{a+t^{\*}\times v_x}{t^{\*}\times s} \bigg{)}^2  = \bigg{(} \frac{b+t^{\*}\times v_y}{t^{\*}\times s} \bigg{)}^2 \\]
+\\[ {t^{\*}}^2 s^2-(a+t^{\*} v_x)^2  = (b+t^{\*} v_y)^2 \\]
