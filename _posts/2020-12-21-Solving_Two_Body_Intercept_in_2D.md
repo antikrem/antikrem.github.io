@@ -74,7 +74,7 @@ The quadratic formula has two solutions. Each solution has four possible states:
 This indicates that a collision, i.e. \\(p_t=q_t\\) would have been possible at an earlier time. Generally, at most 1 solution will be negative, especially when the source's position lies almost perpendicular to the target's velocity.
 
 #### Non-Real
-Such a solution is due to parameters not allowing a solution. An example is a target thats moving away from the source faster than \\(s\\). The non-real component comes from the determinant, thus as expected, with impossible parameters, both solutions will be non-real.
+Such a solution is due to parameters not allowing a solution. An example is a target thats moving away from the source faster than \\(s\\). As expected, with impossible parameters both solutions will be non-real.
 
 #### Undefined
 When \\(a = s^2 - {v_x}^2 - {v_y}^2 = 0\\), there is a division by zero. Such a case occurs when both objects have the same speed. Outside of the degenerate case, a collision would not be possible, and solutions to the quadratic fomula will be undefined.
@@ -89,4 +89,18 @@ In this case, generally just choose the smaller solution for consistency. For ap
 
 When no positive real solution is possible, the model is simply not solvable. No angle exists that can cause an intersection. In this case, using the direct angle to target is probably the most graceful backup, though exceptions and error codes might be more your style.
 
+## Solving Angle
+Solving for \\(theta\\) also comes from the system of equations:
+\\[t^{\*} s  = \frac{j+t^{\*} v_x}{\cos{\theta}}\\]
 
+\\[t^{\*} s = \frac{k+t^{\*} v_y}{\sin{\theta} }\\]
+
+Which can be equated:
+
+\\[\frac{j+t^{\*} v_x}{\cos{\theta}} = \frac{k+t^{\*} v_y}{\sin{\theta} }\\]
+
+\\[\sin{\theta}}{\cos{\theta}} = \frac{k+t^{\*} v_y}{\frac{j+t^{\*} v_x }\\]
+
+
+
+# Implementation
