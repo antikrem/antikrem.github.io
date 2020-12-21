@@ -99,11 +99,11 @@ Which can be equated:
 
 \\[\frac{j+t^{\*} v_x}{\cos{\theta}} = \frac{k+t^{\*} v_y}{\sin{\theta} }\\]
 
-\\[\sin{\theta}}{\cos{\theta}} = \frac{k+t^{\*} v_y}{j+t^{\*} v_x }\\]
+\\[\frac{\sin{\theta}}{\cos{\theta}} = \frac{k+t^{\*} v_y}{j+t^{\*} v_x }\\]
 
 And recalling \\(\tan{\theta}=\sin{\theta}/\cos{\theta}\\):
 
-\\[\tan{\theta} = \frac{k+t^{\*} v_y}{\frac{j+t^{\*} v_x }\\]
+\\[\tan{\theta} = \frac{k+t^{\*} v_y}{j+t^{\*} v_x }\\]
 
 \\[\theta = \arctan{\frac{k+t^{\*} v_y}{j+t^{\*} v_x }}\\]
 
