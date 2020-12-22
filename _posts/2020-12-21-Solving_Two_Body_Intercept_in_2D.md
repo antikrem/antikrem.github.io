@@ -2,7 +2,7 @@
 layout: post
 title: Solving Two Body Intercept in 2D with Unknown Angle
 ---
-Interesting problem: given a starting position and a constant speed, compute the angle to intercept another object moving at a constant velocity. 
+Interesting problem: given a starting position and a constant speed, compute the angle to intercept another object moving at a constant velocity. ![_display_of_two_body_intercept]({{ site.baseurl }}/images/2020-12-21-Solving_Two_Body_Intercept_in_2D/1.png)
 
 This is a common issue in a few places such as real time collision physics. Some other obvious examples come to mind as well, such as AI aiming in FPS and target leads in flight action games. 
 
@@ -45,7 +45,7 @@ The unknown \\(\theta\\) can be removed by equating these expressions without lo
 
 \\[\arccos{ \bigg{(} \frac{j+t^{\*} v_x}{t^{\*} s} \bigg{)}} = \arcsin{ \bigg{(} \frac{k+t^{\*} v_y}{t^{\*} s} \bigg{)} } \\]
 
-The trigonometric functions can be simplified out with the identity \\( \cos{(\arccos{x})} = \sqrt{1-x^2} \\):
+The trigonometric functions can be simplified out with the identity \\( \sin{(\arccos{x})} = \sqrt{1-x^2} \\):
 
 \\[\sqrt{ 1-\bigg{(}\frac{j+t^{\*} v_x}{t^{\*} s} \bigg{)}^2 } = \frac{k+t^{\*} v_y}{t^{\*} s} \\]
 
@@ -130,6 +130,8 @@ function solve_angle_to_moving_player(qx, qy, s, px, py, vx, vy)
     local t_star = nil
     if #solutions > 0 then
         t_star = math.min(unpack(solutions))
+    else
+        return nil;
     end
 
     local theta = 0
@@ -144,6 +146,7 @@ function solve_angle_to_moving_player(qx, qy, s, px, py, vx, vy)
     return theta
 end
 ```
+This implementation will only return the closest solution, and returns `nil` on no solution. 
 
 # Application
 This was originally derived for a bullet pattern that predicts the player's movement. The idea being this encourages quick reaction time, control over movement and understanding of mechanics to quickly change direction. 
