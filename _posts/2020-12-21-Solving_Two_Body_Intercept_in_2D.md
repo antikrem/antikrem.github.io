@@ -3,7 +3,6 @@ layout: post
 title: Solving Two Body Intercept in 2D with Unknown Angle
 ---
 Interesting problem: given a starting position and a constant speed, compute the angle to intercept another object moving at a constant velocity. ![_display_of_two_body_intercept]({{ site.baseurl }}/images/2020-12-21-Solving_Two_Body_Intercept_in_2D/1.png)
-
 This is a common issue in a few places such as real time collision physics. Some other obvious examples come to mind as well, such as AI aiming in FPS and target leads in flight action games. 
 
 A casual google will find only [one acceptable solution](https://www.codeproject.com/Articles/990452/Interception-of-Two-Moving-Objects-in-D-Space). However, its a slightly over complicated trigonometric derivation. Also, the resulting angle will be relative to the vector from the source to destination, rather than absolute. 
