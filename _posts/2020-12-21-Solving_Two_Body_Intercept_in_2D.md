@@ -2,8 +2,7 @@
 layout: post
 title: Solving Two Body Intercept in 2D with Unknown Angle
 ---
-Interesting problem: given a starting position and a constant speed, compute the angle to intercept another object moving at a constant velocity. 
-![_display_of_two_body_intercept]({{ site.baseurl }}/images/2020-12-21-Solving_Two_Body_Intercept_in_2D/1.png)
+Interesting problem: given a starting position and a constant speed, compute the angle to intercept another object moving at a constant velocity. ![_display_of_two_body_intercept]({{ site.baseurl }}/images/2020-12-21-Solving_Two_Body_Intercept_in_2D/1.png)
 
 This is a common issue in a few places such as real time collision physics. Some other obvious examples come to mind as well, such as AI aiming in FPS and target leads in flight action games. 
 
@@ -131,6 +130,8 @@ function solve_angle_to_moving_player(qx, qy, s, px, py, vx, vy)
     local t_star = nil
     if #solutions > 0 then
         t_star = math.min(unpack(solutions))
+    else
+        return nil;
     end
 
     local theta = 0
@@ -145,6 +146,7 @@ function solve_angle_to_moving_player(qx, qy, s, px, py, vx, vy)
     return theta
 end
 ```
+This implementation will only return the closest solution, and returns `nil` on no solution. 
 
 # Application
 This was originally derived for a bullet pattern that predicts the player's movement. The idea being this encourages quick reaction time, control over movement and understanding of mechanics to quickly change direction. 
