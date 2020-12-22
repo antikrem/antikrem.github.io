@@ -154,5 +154,7 @@ This was originally derived for a bullet pattern that predicts the player's move
   <source src="https://antikrem.github.io/images/2020-12-21-Solving_Two_Body_Intercept_in_2D/two_body.mp4" type="video/mp4">
 </video>
 
-Its as fun as it looks. 
+Its as fun as it looks. While I'm dodging some really fast bullets, since I have a lot of control over where they go with my movement, I can make sure I keep them directed far from me. This makes it deceptivly easy with some stratergy and control over positioning and movement, which is key in bullet hell games. Mixing in a few directly targeted bullets adds an extra level of fun, since those need to be dodged more cenventionally. Shifting between the three modes of movement (focus, regular and dash) gives best results, and this is some of the funner parts of most bullet hell games.
+
+Overall, pretty cool. I'll do an N-dimension generalisation soon, as soon as I can work it out.
 
