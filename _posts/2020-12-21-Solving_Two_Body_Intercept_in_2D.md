@@ -149,7 +149,7 @@ This implementation will only return the closest solution, and returns `nil` on 
 
 # Application
 This was originally derived for a bullet pattern that predicts the player's movement. The idea being this encourages quick reaction time, control over movement and understanding of mechanics to quickly change direction. 
-<video autoplay="autoplay" loop="loop" controls muted>
+<video autoplay="autoplay" loop="loop" controls muted width=100%>
   <source src="https://antikrem.github.io/images/2020-12-21-Solving_Two_Body_Intercept_in_2D/two_body.mp4" type="video/mp4">
 </video>
 Its as fun as it looks. 
