@@ -6,13 +6,18 @@ title: Frame Time Analysis
 Ever play a game that feels chunky but the frame rate counter looks fine? It takes a single frame coming out a fraction of a second too late to get me to notice, but most frame rate monitors squash outlier frames to simplify output. But these dropped frames are probably the most important of them all:
 ![1.png]({{ site.baseurl }}/images/2021-01-01-frame_time_analysis/1.png)
 
-Fraps is probably the better monitor for frame rates but it's in-game output is heavily averaged and hides outliers. The csv output when running a benchmark (default `F11`) is very detailed, but difficult to easily parse. Therefore, I wrote a script to do some data analysis:
+Fraps is probably the better monitor for frame rates but it's in-game output is heavily averaged and hides outliers. The csv output when running a benchmark (default `F11`) is very detailed, but difficult to easily parse. Therefore, I wrote a script to do some data analysis and plot graphs:
 
 ## Usage:
 
 1. [Download fraps](https://fraps.com/download.php).
 2. Run the benchmark tool and copy any number of frametime result files (in the form `* frametimes.csv`) to the same directory as the script.
 3. Execute the script, it will load and analyse all relevent csv files in the same directory.
+
+## Dependencies:
+- matplotlib
+- pandas
+- scipy
 
 ## Examples:
 
@@ -65,5 +70,9 @@ The initial motive was to explain some of some chunky behaviour of my engine. Th
 ![5.png]({{ site.baseurl }}/images/2021-01-01-frame_time_analysis/5.png)
 
 The frame drops occur once every 10ms. Interestingly, the garbage collection is also on a 10ms timer. Initially I though the frame drops have to do with either the script queue being saturated when picking up powerups or a different tick rate between position updates and rendering. At this point, I'm pretty sure its the garbage collector locking all other threads when being run. 
+
 Unfortunatly, I wrote the garbage collector to not lock other threads when reclaiming rescources. This might be tricky to fix, since it will involve finding a tacit lock. 
 
+## Conclusion
+Generally, I dislike reviews of video games that don't give any performance metrics. And any performance metrics tend to be an mean. Some ports do suffer pretty badly from dropped frames, and it would be nice to get a bit of a warning for some example hardware. On the other side of the coin, I dislike games that don't try to optimise away frame drops, especially when its a bottle neck that could be avoided with a bit of threading, a relaxed lock or a smart design patern. 
+This script is released under the Unlicense, so feel free to use and modify as much as desired.
