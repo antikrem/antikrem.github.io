@@ -74,5 +74,8 @@ The frame drops occur once every 10ms. Interestingly, the garbage collection is 
 Unfortunatly, I wrote the garbage collector to not lock other threads when reclaiming rescources. This might be tricky to fix, since it will involve finding a tacit lock. 
 
 ## Conclusion
-Generally, I dislike reviews of video games that don't give any performance metrics. And any performance metrics tend to be an mean. Some ports do suffer pretty badly from dropped frames, and it would be nice to get a bit of a warning for some example hardware. On the other side of the coin, I dislike games that don't try to optimise away frame drops, especially when its a bottle neck that could be avoided with a bit of threading, a relaxed lock or a smart design patern. 
+Generally, I dislike reviews of video games that don't give any performance metrics. And any performance metrics tend to be an mean. Some ports do suffer pretty badly from dropped frames, and it would be nice to get a bit of a warning for some example hardware.
+
+On the other side of the coin, I dislike games that don't try to optimise away frame drops, especially when its a bottle neck that could be avoided with a bit of threading, a relaxed lock or a smart design patern.
+
 This script is released under the Unlicense, so feel free to use and modify as much as desired.
