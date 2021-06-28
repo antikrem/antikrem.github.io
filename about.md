@@ -4,14 +4,14 @@ title: About
 permalink: /about/
 ---
 
-I'm a programmer based in Brisbane. My undergrad was in Mathematics and IT at UQ, with a major in Operations Research and Data Analytics. I like solving hard problems and making fun programs.
+I'm a programmer based in Brisbane. My undergrad was in Mathematics and IT at UQ, with a major in Operations Research and Data Analytics. I now work as a Software Engineer, mostly in .net and front end technologies. I like solving hard problems and making fun programs.
 
-### Interests
+### Current Interests
 
 * Game Engine Architecture
 * Graphics and OpenGL
 * Multithreading and High Performance Computing
-* Operations Research and Mathematical Optimisation
+* Mathematical Optimisation
 * Bayesian Statistics
 * Neural Networks
 
