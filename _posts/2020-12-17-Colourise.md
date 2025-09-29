@@ -31,7 +31,7 @@ if (colorize->lightness > 0)
   gimp_hsl_to_rgb (&hsl, &rgb);
 ```
 
-GIMP's colourise take HSL rather than RGB for incoming colour, which has the added benifit of being easier for artists. Also, the ranges for the input HSL is not `(0-1, 0-1, 0-1)`. I would like the standard for all color values in shaders I right to be between 0 and 1, so that had to be modified. 
+GIMP's colourise take HSL rather than RGB for incoming colour, which has the added benefit of being easier for artists. Also, the ranges for the input HSL is not `(0-1, 0-1, 0-1)`. I would like the standard for all color values in shaders I right to be between 0 and 1, so that had to be modified. 
 
 In all seriousness, while being inspired by an algorithm used in a GPL Program and writing an implementation in a different language is a grey area, the resulting shader function is technically derived work. Thus, it would fall under GPLv3 and related usage restrictions.
 
