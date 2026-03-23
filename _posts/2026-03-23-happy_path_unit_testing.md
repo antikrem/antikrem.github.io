@@ -86,6 +86,17 @@ public class EvenAndPositiveCheckerTests
     }
 
     [Test]
+    public void IsEvenAndPositive_EvenAndPositive_ReturnsTrue()
+    {
+        SetUpIsPositive();
+        SetUpIsEven();
+
+        var result = _sut.IsEvenAndPositive(Some.Int());
+
+        Assert.True(result);
+    }
+
+    [Test]
     public void IsEvenAndPositive_OddNumber_ReturnsFalse()
     {
         SetUpIsPositive();
