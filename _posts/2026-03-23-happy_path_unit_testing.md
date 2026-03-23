@@ -13,10 +13,10 @@ At work we use a lot of common patterns. A lot of our classes look like this:
 ```csharp
 public class EvenAndPositiveChecker(INumberRulesService service)
 {
-	public bool IsEvenAndPositive(int value)
-	{
-		return service.IsEven(value) && service.IsPositive(value);
-	}
+    public bool IsEvenAndPositive(int value)
+    {
+        return service.IsEven(value) && service.IsPositive(value);
+    }
 }
 ```
 
@@ -25,35 +25,35 @@ So your test cases will look like:
 ```csharp
 public class EvenAndPositiveCheckerTests
 {
-	private INumberRulesService _rules;
-	private EvenAndPositiveChecker _sut;
+    private INumberRulesService _rules;
+    private EvenAndPositiveChecker _sut;
 
-	[Setup]
-	public void Setup()
-	{
-		_rules = Substitute.For<INumberRulesService>();
-		_sut = new EvenAndPositiveChecker(_rules);
-	}
+    [Setup]
+    public void Setup()
+    {
+        _rules = Substitute.For<INumberRulesService>();
+        _sut = new EvenAndPositiveChecker(_rules);
+    }
 
-	[Test]
-	public void IsEvenAndPositive_OddNumber_ReturnsFalse()
-	{
-		_rules.IsEven(1).Returns(false);
+    [Test]
+    public void IsEvenAndPositive_OddNumber_ReturnsFalse()
+    {
+        _rules.IsEven(1).Returns(false);
 
-		var result = _sut.IsEvenAndPositive(1);
+        var result = _sut.IsEvenAndPositive(1);
 
-		Assert.False(result);
-	}
+        Assert.False(result);
+    }
 
-	[Test]
-	public void IsEvenAndPositive_NegativeNumber_ReturnsFalse()
-	{
-		_rules.IsPositive(-2).Returns(false);
+    [Test]
+    public void IsEvenAndPositive_NegativeNumber_ReturnsFalse()
+    {
+        _rules.IsPositive(-2).Returns(false);
 
-		var result = _sut.IsEvenAndPositive(-2);
+        var result = _sut.IsEvenAndPositive(-2);
 
-		Assert.False(result);
-	}
+        Assert.False(result);
+    }
 }
 ```
 
@@ -62,10 +62,10 @@ But wait -- the tests pass, but they aren't technically correct. We're only ever
 ```csharp
 public class EvenAndPositiveChecker(INumberRulesService service)
 {
-	public bool IsEvenAndPositive(int value)
-	{
-		return service.IsEven(value) && !service.IsPositive(value);
-	}
+    public bool IsEvenAndPositive(int value)
+    {
+        return service.IsEven(value) && !service.IsPositive(value);
+    }
 }
 ```
 
@@ -75,47 +75,47 @@ One approach is to add helpers that set up the green path for each service call.
 ```csharp
 public class EvenAndPositiveCheckerTests
 {
-	private INumberRulesService _rules;
-	private EvenAndPositiveChecker _sut;
+    private INumberRulesService _rules;
+    private EvenAndPositiveChecker _sut;
 
-	[Setup]
-	public void Setup()
-	{
-		_rules = Substitute.For<INumberRulesService>();
-		_sut = new EvenAndPositiveChecker(_rules);
-	}
+    [Setup]
+    public void Setup()
+    {
+        _rules = Substitute.For<INumberRulesService>();
+        _sut = new EvenAndPositiveChecker(_rules);
+    }
 
-	[Test]
-	public void IsEvenAndPositive_OddNumber_ReturnsFalse()
-	{
-		SetUpIsPositive();
-		_rules.IsEven(Arg.Any<int>()).Returns(false);
+    [Test]
+    public void IsEvenAndPositive_OddNumber_ReturnsFalse()
+    {
+        SetUpIsPositive();
+        _rules.IsEven(Arg.Any<int>()).Returns(false);
 
-		var result = _sut.IsEvenAndPositive(Some.Int());
+        var result = _sut.IsEvenAndPositive(Some.Int());
 
-		Assert.False(result);
-	}
+        Assert.False(result);
+    }
 
-	[Test]
-	public void IsEvenAndPositive_NegativeNumber_ReturnsFalse()
-	{
-		SetUpIsEven();
-		_rules.IsPositive(Arg.Any<int>()).Returns(false);
+    [Test]
+    public void IsEvenAndPositive_NegativeNumber_ReturnsFalse()
+    {
+        SetUpIsEven();
+        _rules.IsPositive(Arg.Any<int>()).Returns(false);
 
-		var result = _sut.IsEvenAndPositive(Some.Int());
+        var result = _sut.IsEvenAndPositive(Some.Int());
 
-		Assert.False(result);
-	}
+        Assert.False(result);
+    }
 
-	private void SetUpIsEven()
-	{
-		_rules.IsEven(Arg.Any<int>()).Returns(true);
-	}
+    private void SetUpIsEven()
+    {
+        _rules.IsEven(Arg.Any<int>()).Returns(true);
+    }
 
-	private void SetUpIsPositive()
-	{
-		_rules.IsPositive(Arg.Any<int>()).Returns(true);
-	}
+    private void SetUpIsPositive()
+    {
+        _rules.IsPositive(Arg.Any<int>()).Returns(true);
+    }
 }
 ```
 
@@ -127,45 +127,45 @@ I like a solution that's less precise but simpler. We set up the green path in t
 ```csharp
 public class EvenAndPositiveCheckerTests
 {
-	private INumberRulesService _rules;
-	private EvenAndPositiveChecker _sut;
+    private INumberRulesService _rules;
+    private EvenAndPositiveChecker _sut;
 
-	[Setup]
-	public void SetupHappyPath()
-	{
-		_rules = Substitute.For<INumberRulesService>();
-		_rules.IsEven(Arg.Any<int>()).Returns(true);
-		_rules.IsPositive(Arg.Any<int>()).Returns(true);
-		_sut = new EvenAndPositiveChecker(_rules);
-	}
+    [Setup]
+    public void SetupHappyPath()
+    {
+        _rules = Substitute.For<INumberRulesService>();
+        _rules.IsEven(Arg.Any<int>()).Returns(true);
+        _rules.IsPositive(Arg.Any<int>()).Returns(true);
+        _sut = new EvenAndPositiveChecker(_rules);
+    }
 
-	[Test]
-	public void IsEvenAndPositive_HappyPath_ReturnsTrue()
-	{
-		var result = _sut.IsEvenAndPositive(Some.Int());
+    [Test]
+    public void IsEvenAndPositive_HappyPath_ReturnsTrue()
+    {
+        var result = _sut.IsEvenAndPositive(Some.Int());
 
-		Assert.True(result);
-	}
+        Assert.True(result);
+    }
 
-	[Test]
-	public void IsEvenAndPositive_OddNumber_ReturnsFalse()
-	{
-		_rules.IsEven(Arg.Any<int>()).Returns(false);
+    [Test]
+    public void IsEvenAndPositive_OddNumber_ReturnsFalse()
+    {
+        _rules.IsEven(Arg.Any<int>()).Returns(false);
 
-		var result = _sut.IsEvenAndPositive(Some.Int());
+        var result = _sut.IsEvenAndPositive(Some.Int());
 
-		Assert.False(result);
-	}
+        Assert.False(result);
+    }
 
-	[Test]
-	public void IsEvenAndPositive_NegativeNumber_ReturnsFalse()
-	{
-		_rules.IsPositive(Arg.Any<int>()).Returns(false);
+    [Test]
+    public void IsEvenAndPositive_NegativeNumber_ReturnsFalse()
+    {
+        _rules.IsPositive(Arg.Any<int>()).Returns(false);
 
-		var result = _sut.IsEvenAndPositive(Some.Int());
+        var result = _sut.IsEvenAndPositive(Some.Int());
 
-		Assert.False(result);
-	}
+        Assert.False(result);
+    }
 }
 ```
 
