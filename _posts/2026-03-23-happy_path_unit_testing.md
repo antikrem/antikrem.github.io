@@ -4,8 +4,7 @@ title: Happy little unit tests
 ---
 
 Do unit tests make you happy? When they work, they make me ecstatic. For agentic coding, they let you fire and forget, knowing that as long as the unit tests pass, your existing code (probably) won't be broken... Right?
-
-
+![Happy little unit tests]({{ site.baseurl }}/images/2026-03-23-happy_path_unit_testing/bob_ross_checkmarks.jpg)
 
 # To fail or not to fail
 At work we use a lot of common patterns. A lot of our classes look like this:
@@ -57,7 +56,7 @@ public class EvenAndPositiveCheckerTests
 }
 ```
 
-But wait -- the tests pass, but they aren't technically correct. We're only ever proving one branch, because the substitute returns `false` by default for any call we haven't set up, including `_rules.IsEven` in the second test. And it's not very obvious from reading the test that there is a problem. We can introduce a bug like this, and the tests will still pass:
+But wait... the tests pass, but they aren't technically correct. We're only ever proving one branch, because the substitute returns `false` by default for any call we haven't set up, including `_rules.IsEven` in the second test. And it's not very obvious from reading the test that there is a problem. We can introduce a bug like this, and the tests will still pass:
 
 ```csharp
 public class EvenAndPositiveChecker(INumberRulesService service)
@@ -180,7 +179,7 @@ public class EvenAndPositiveCheckerTests
 }
 ```
 
-The lack of precision comes from reassigning the substitute -- in NSubstitute, later `.Returns()` calls override earlier ones for the same argument. Not ideal, but the tradeoff is worth it for the simplicity.
+The lack of precision comes from reassigning the substitute. In NSubstitute, later `.Returns()` calls override earlier ones for the same argument. Not ideal, but the tradeoff is worth it for the simplicity.
 
 Naming is also worth thinking about. I like calling the setup `SetupHappyPath` explicitly. It tells the reader what the default state is, so there are no surprises.
 
